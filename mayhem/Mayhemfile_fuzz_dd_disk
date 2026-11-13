@@ -1,0 +1,10 @@
+project: savantenvs/mupen64plus-core
+target: fuzz_dd_disk
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_dd_disk/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_dd_disk
+    libfuzzer: true
+    timeout: 30
+    dictionary: /mayhem/mayhem/fuzz_dd_disk/fuzz_dd_disk.dict

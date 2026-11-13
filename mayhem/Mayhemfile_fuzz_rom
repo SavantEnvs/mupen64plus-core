@@ -1,0 +1,9 @@
+project: savantenvs/mupen64plus-core
+target: fuzz_rom
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_rom/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_rom
+    libfuzzer: true
+    timeout: 30
